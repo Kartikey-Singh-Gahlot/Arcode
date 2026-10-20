@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start All",
+      "dependsOn": [
+        "api-gateway",
+        "auth-server",
+        "user-server",
+        "mailer-server",
+        "frontend"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "api-gateway",
+      "type": "shell",
+      "command": "source ~/.nvm/nvm.sh && nvm use 24 && npm run start:dev",
+      "options": { "cwd": "${workspaceFolder}/apps/api-gateway" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "new", "reveal": "always" }
+    },
+    {
+      "label": "auth-server",
+      "type": "shell",
+      "command": "source ~/.nvm/nvm.sh && nvm use 24 && npm run start:dev",
+      "options": { "cwd": "${workspaceFolder}/apps/auth-server" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "new", "reveal": "always" }
+    },
+    {
+      "label": "user-server",
+      "type": "shell",
+      "command": "source ~/.nvm/nvm.sh && nvm use 24 && npm run start:dev",
+      "options": { "cwd": "${workspaceFolder}/apps/user-server" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "new", "reveal": "always" }
+    },
+    {
+      "label": "mailer-server",
+      "type": "shell",
+      "command": "source ~/.nvm/nvm.sh && nvm use 24 && npm run start:dev",
+      "options": { "cwd": "${workspaceFolder}/apps/mailer-server" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "new", "reveal": "always" }
+    },
+    {
+      "label": "frontend",
+      "type": "shell",
+      "command": "source ~/.nvm/nvm.sh && nvm use 24 && npm run start:dev",
+      "options": { "cwd": "${workspaceFolder}/apps/frontend" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "new", "reveal": "always" }
+    }
+  ]
+}
