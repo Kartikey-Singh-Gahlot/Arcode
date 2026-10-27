@@ -4,6 +4,7 @@
     {
       "label": "Start All",
       "dependsOn": [
+        "shared",
         "api-gateway",
         "auth-server",
         "user-server",
@@ -12,6 +13,15 @@
       ],
       "dependsOrder": "parallel",
       "problemMatcher": []
+    },
+    {
+      "label": "shared",
+      "type": "shell",
+      "command": "source ~/.nvm/nvm.sh && nvm use 24 && npm run dev",
+      "options": { "cwd": "${workspaceFolder}/packages/shared" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "new", "reveal": "always" }
     },
     {
       "label": "api-gateway",
